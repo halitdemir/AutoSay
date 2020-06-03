@@ -1,0 +1,16 @@
+
+.colorDiv {
+    width: 10px;
+    height: auto;
+}
+
+@media (max-width: 800px) {
+    .mainDiv {
+        width:auto;
+        height:auto;
+        margin: auto;
+        left: 7%;
+        right: 7%;
+        position: absolute;
+    }
+}
