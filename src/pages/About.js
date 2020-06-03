@@ -10,26 +10,21 @@ function About() {
         <p>Bişeler Bişeler</p>
         <ImageSlide json={Images.about.generalSlide} name="generalSlide"/>
         <h5>Biz Kimiz :</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>otomativ sektöründeki üretim ve üretime bağlı diğer yan sektörlerdeki sistemleri optimize etmek
+amacıyla bir araya gelen mühendisleriz.Küresel piyasada büyük bir pazar payına sahip olan 
+otomativ sektöründeki optimizasyonların geliştirilmesi ile fazla üretimin önüne geçerek 
+fazla kaynak tüketiminin önüne geçip çevreci bir yaklaşım kazandırmayı hedeflemekle  birlikte 
+fazla üretim sonucu ortaya çıkan maliyet problemlerine de çözüm getirmeyi hedeflemekteyiz.
+           .</p>
         <h5>Misyonumuz :</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Topluma fayda sağlayan yenilikçi ve çevreci otomotiv ürün ve hizmetleri sunmak temel misyonumuz olmakla birlikte 
+küresel ve ekonomik piyasalardaki otomobil üretimini en ideal şekle getirmeyi hedeflemekteyiz.
+        </p>
         <h5>Vizyonumuz :</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Dünyanın en akıllı otomasyon sistemi ve stratejileriyle tükenen kaynaklarımızı koruma fikri vizyonumuzun temelini oluşturur.
+gelişen teknoloji ile birlikte çağın gereksinimlerine yönelik ihtiyaçları karşılayacak şekilde her sistemin çalışmasını hedeflemekteyiz.
+bu hedefler kapsamında otomasyon sistemlerini global piyasanın en büyük payına sahip olan otomativ sektörü ile gerçekleştirmeyi planlamaktayız.
+        </p>
 
     </div>
     );
