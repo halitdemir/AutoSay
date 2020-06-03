@@ -1,49 +1,46 @@
 import React, { Component } from "react";
 import MapContainer from '../components/MapContainer'
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Nav } from 'react-bootstrap';
 const divStyle = {
     height: '500px',
   };
 class Contact extends Component {
     constructor() {
-    super();
-    this.state = {
-        name: "",
-        lastName: "",
-        email: "",
-        textAreaValue: "",
-    };
-    this.handleName = this.handleName.bind(this);
-    this.handleLastName = this.handleLastName.bind(this);
-    this.handleEMail = this.handleEMail.bind(this);
-    this.handleTextArea = this.handleTextArea.bind(this);
-    this.mailButton = this.mailButton.bind(this);
+        super();
+        this.state = {
+            name: "",
+            lastName: "",
+            email: "",
+            textAreaValue: "",
+        };
+        this.handleName = this.handleName.bind(this);
+        this.handleLastName = this.handleLastName.bind(this);
+        this.handleEMail = this.handleEMail.bind(this);
+        this.handleTextArea = this.handleTextArea.bind(this);
+        this.mailButton = this.mailButton.bind(this);
     }
 
     handleName(event) {
         this.setState({ name: event.target.value });
     }
+
     handleLastName(event) {
         this.setState({ lastName: event.target.value });
     }
+
     handleEMail(event) {
         this.setState({ email: event.target.value });
     }
+
     handleTextArea(event) {
         this.setState({ textAreaValue: event.target.value });
     }
+
     mailButton(event){
-        console.log("name",this.state.name);
-        console.log("lastName",this.state.lastName);
-        console.log("email",this.state.email);
-        console.log("textarea",this.state.textAreaValue);
         window.location.href = `mailto:oofkadho@gmail.com?subject=Sipariş!&body= mesaj:  %0D%0A  ${this.state.textAreaValue}%0D%0A isim/soyisim:  ${this.state.name} ${this.state.lastName}%0D%0A eposta:  ${this.state.email}%0D%0A`;
     }
+
     render() {
-        console.log("name",this.state.name);
-        console.log("lastName",this.state.lastName);
-        console.log("email",this.state.email);
-        console.log("textarea",this.state.textAreaValue);
         return(
             <>
                 <h2>Contact</h2>
@@ -109,9 +106,16 @@ class Contact extends Component {
                                 </Row>
                                 <span>&nbsp;&nbsp;</span>
                                 <span>&nbsp;&nbsp;</span>
-                                <Button variant="primary" type="submit"  onClick={() => {this.mailButton()}}>
-                                    İlet
-                                </Button>
+                                <Row>
+                                    <Col md={{ span: 2 }}>
+                                        <Nav.Link>
+                                            <Button variant="secondary" type="submit"  onClick={() => {this.mailButton()}}>
+                                                Mesajı İlet              
+                                            </Button>
+                                        </Nav.Link>
+                                    </Col>
+                                    <Col md={{ span: 4, offset: 2 }}></Col>
+                                </Row>
                             </Form>
                         </Col>
                     </Row>
@@ -120,7 +124,5 @@ class Contact extends Component {
         );
     }
 }
-  
-
 
 export default Contact;

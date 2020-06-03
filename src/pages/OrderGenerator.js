@@ -1,48 +1,69 @@
-import React from 'react';
+import React, { Component } from "react";
 import { Accordion, Card, Form, Row, Col, Image, Button, Container, Nav } from 'react-bootstrap';
 import ImageSlide from '../components/ImageSlide';
 import Images from '../constants/Images'
 import { NavLink } from 'react-router-dom';
 
-function OrderGenerator() {
-    return (
-        <div className="mainDiv">
-            <span>&nbsp;&nbsp;</span>
-            <h2>Sipariş</h2>
-            <p>Bişeler Bişeler</p>
-            <ImageSlide json={Images.order.generalSlide} name="generalSlide"/>
-            <Accordion defaultActiveKey="0">
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Card.Header} eventKey="0">
-                        Özellikler
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="0">
-                    <Card.Body>
-                        <p><h5>Motor :</h5> 5.5</p>
-                        <p><h5>Renk :</h5> Kırmızı</p>
-                    </Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-            </Accordion>
-            <span>&nbsp;&nbsp;</span>
-            <span>&nbsp;&nbsp;</span>
-            <GeneratorForm json={Images}/>
-            <span>&nbsp;&nbsp;</span>
-            <Container>
-                <Row>
-                    <Col sm></Col>
-                    <Col sm>
-                        <NavLink to="/order">
-                            <Button variant="secondary">Siparişi Tamamla</Button>
-                        </NavLink>
-                    </Col>
-                    <Col sm></Col>
-                </Row>
-            </Container>
-        </div>
-    );
+class OrderGenerator extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            engine: "",
+            color: "",
+            rim: "",
+            upholstery: "",
+            collision: false,
+            FFandISTLights: false,
+            EFSMirrors: false,
+            pedestrianDetection: false,
+            frontAsist: false,
+        };
+    }
+
+    handleName(event) {
+        this.setState({ name: event.target.value });
+    }
+
+    render() {
+        return (
+            <div className="mainDiv">
+                <span>&nbsp;&nbsp;</span>
+                <h2>Sipariş</h2>
+                <p>Bişeler Bişeler</p>
+                <ImageSlide json={Images.order.generalSlide} name="generalSlide"/>
+                <Accordion defaultActiveKey="0">
+                    <Card>
+                        <Card.Header>
+                        <Accordion.Toggle as={Card.Header} eventKey="0">
+                            Özellikler
+                        </Accordion.Toggle>
+                        </Card.Header>
+                        <Accordion.Collapse eventKey="0">
+                        <Card.Body>
+                            <p><h5>Motor :</h5> 5.5</p>
+                            <p><h5>Renk :</h5> Kırmızı</p>
+                        </Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
+                <span>&nbsp;&nbsp;</span>
+                <span>&nbsp;&nbsp;</span>
+                <GeneratorForm json={Images}/>
+                <span>&nbsp;&nbsp;</span>
+                <Container>
+                    <Row>
+                        <Col sm></Col>
+                        <Col sm>
+                            <NavLink to="/order">
+                                <Button variant="secondary">Siparişi Tamamla</Button>
+                            </NavLink>
+                        </Col>
+                        <Col sm></Col>
+                    </Row>
+                </Container>
+            </div>
+        );
+    }
 }
 
 function GeneratorForm(props){
@@ -55,24 +76,25 @@ function GeneratorForm(props){
                     </Form.Label>
                     <Col sm={3}>
                         <Form.Check
-                        type="radio"
-                        label="1.0         95ps(70 kW)           5 İleri Vites"
-                        name="engineRadios"
-                        id="engineRadios1"
+                            type="radio"
+                            label="1.0         95ps(70 kW)           5 İleri Vites"
+                            name="engineRadios"
+                            id="engineRadios1"
                         />
                         <span>&nbsp;&nbsp;</span>
                         <Form.Check
-                        type="radio"
-                        label="1.5         95ps(70 kW)           7 İleri Vites"
-                        name="engineRadios"
-                        id="engineRadios2"
+                            type="radio"
+                            label="1.5         95ps(70 kW)           7 İleri Vites"
+                            name="engineRadios"
+                            id="engineRadios2"
+                            onChange={console.log("degisti")}
                         />
                         <span>&nbsp;&nbsp;</span>
                         <Form.Check
-                        type="radio"
-                        label="1.6         115ps(85 kW)         7 İleri Vites"
-                        name="engineRadios"
-                        id="engineRadios3"
+                            type="radio"
+                            label="1.6         115ps(85 kW)         7 İleri Vites"
+                            name="engineRadios"
+                            id="engineRadios3"
                         />
                     </Col>
                 </Form.Group>
@@ -175,38 +197,38 @@ function GeneratorForm(props){
                     <Col sm={5}>
                         <span>&nbsp;</span>
                         <Form.Check
-                            type="radio"
+                            type="checkbox"
                             label={"Çarpışma öncesi hazırlık sistemi"}
+                            name="optionRadios"
+                            id="optionRadios1"
+                        />
+                        <span>&nbsp;</span>
+                        <Form.Check
+                            type="checkbox"
+                            label={"Ön sis farları ve entegre statik dönüş farları"}
                             name="optionRadios"
                             id="optionRadios2"
                         />
                         <span>&nbsp;</span>
                         <Form.Check
-                            type="radio"
-                            label={"Ön sis farları ve entegre statik dönüş farları"}
+                            type="checkbox"
+                            label={"Elektrikli katlanabilir yan aynalar"}
                             name="optionRadios"
                             id="optionRadios3"
                         />
                         <span>&nbsp;</span>
                         <Form.Check
-                            type="radio"
-                            label={"Elektrikli katlanabilir yan aynalar"}
+                            type="checkbox"
+                            label={"Yaya algılama sistemi"}
                             name="optionRadios"
                             id="optionRadios4"
                         />
                         <span>&nbsp;</span>
                         <Form.Check
-                            type="radio"
-                            label={"Yaya algılama sistemi"}
-                            name="optionRadios"
-                            id="optionRadios5"
-                        />
-                        <span>&nbsp;</span>
-                        <Form.Check
-                            type="radio"
+                            type="checkbox"
                             label={"Front assist ve şehir içi acil fren asistanı"}
                             name="optionRadios"
-                            id="optionRadios6"
+                            id="optionRadios5"
                         />
                     </Col>
                 </Form.Group>
