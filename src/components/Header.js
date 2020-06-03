@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Navbar, Nav, Button } from 'react-bootstrap';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import routes from '../constants/routes';
 import protectedRoutes from '../constants/protectedRoutes';
 import { AuthContext } from "../App";
@@ -12,7 +12,16 @@ function HeaderComponent () {
         <>
                 <nav>
                     <Navbar  bg="dark" variant="dark" expand="lg" >
-                    <Navbar.Brand to="/home"><Button variant="secondary">AutoSay</Button></Navbar.Brand>
+                    <Navbar.Brand><Button variant="secondary">
+                                        <NavLink
+                                            to="/home"
+                                            style={{
+                                                fontWeight: "bold",
+                                                color: "white"
+                                                }       
+                                        }>
+                                            AutoSay
+                                        </NavLink></Button></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="justify-content-end">
@@ -33,7 +42,7 @@ function HeaderComponent () {
                                 )
                             )}                            
                         </Nav>
-                        {
+                        {!isLoggedIn &&
                             routes.header.map((route, i) => (
                                 <Nav className="justify-content-end">
                                     <NavLink to={route.path}   

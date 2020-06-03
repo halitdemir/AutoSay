@@ -2,6 +2,7 @@ import React from 'react';
 import { Accordion, Card, Button, Container, Row, Col, Nav } from 'react-bootstrap';
 import ImageSlide from '../components/ImageSlide';
 import Images from '../constants/Images'
+import { NavLink, Link } from 'react-router-dom';
 
 
 function Order() {
@@ -44,9 +45,9 @@ function Order() {
                         </Nav.Link>
                     </Col>
                     <Col md={{ span: 3, offset: 6 }}>
-                        <Nav.Link href="/order_generator">
+                        <NavLink to="/order_generator">
                             <Button variant="secondary">Konfigürasyona Devam Et</Button>
-                        </Nav.Link>
+                        </NavLink>
                     </Col>
                 </Row>
             </Container>

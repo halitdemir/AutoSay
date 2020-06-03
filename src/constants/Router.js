@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import {
-    Switch,
-    Route,
-    } from "react-router-dom";
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 import routes from "../constants/routes";
 import { AuthContext } from "../App";
 import protectedRoutes from './protectedRoutes'

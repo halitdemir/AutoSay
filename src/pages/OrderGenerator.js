@@ -2,6 +2,7 @@ import React from 'react';
 import { Accordion, Card, Form, Row, Col, Image, Button, Container, Nav } from 'react-bootstrap';
 import ImageSlide from '../components/ImageSlide';
 import Images from '../constants/Images'
+import { NavLink } from 'react-router-dom';
 
 function OrderGenerator() {
     return (
@@ -33,9 +34,9 @@ function OrderGenerator() {
                 <Row>
                     <Col sm></Col>
                     <Col sm>
-                        <Nav.Link href="/order">
+                        <NavLink to="/order">
                             <Button variant="secondary">Siparişi Tamamla</Button>
-                        </Nav.Link>
+                        </NavLink>
                     </Col>
                     <Col sm></Col>
                 </Row>
@@ -174,38 +175,38 @@ function GeneratorForm(props){
                     <Col sm={5}>
                         <span>&nbsp;</span>
                         <Form.Check
-                        type="radio"
-                        label={"Çarpışma öncesi hazırlık sistemi"}
-                        name="optionRadios"
-                        id="optionRadios2"
+                            type="radio"
+                            label={"Çarpışma öncesi hazırlık sistemi"}
+                            name="optionRadios"
+                            id="optionRadios2"
                         />
                         <span>&nbsp;</span>
                         <Form.Check
-                        type="radio"
-                        label={"Ön sis farları ve entegre statik dönüş farları"}
-                        name="optionRadios"
-                        id="optionRadios3"
+                            type="radio"
+                            label={"Ön sis farları ve entegre statik dönüş farları"}
+                            name="optionRadios"
+                            id="optionRadios3"
                         />
                         <span>&nbsp;</span>
                         <Form.Check
-                        type="radio"
-                        label={"Elektrikli katlanabilir yan aynalar"}
-                        name="optionRadios"
-                        id="optionRadios4"
+                            type="radio"
+                            label={"Elektrikli katlanabilir yan aynalar"}
+                            name="optionRadios"
+                            id="optionRadios4"
                         />
                         <span>&nbsp;</span>
                         <Form.Check
-                        type="radio"
-                        label={"Yaya algılama sistemi"}
-                        name="optionRadios"
-                        id="optionRadios5"
+                            type="radio"
+                            label={"Yaya algılama sistemi"}
+                            name="optionRadios"
+                            id="optionRadios5"
                         />
                         <span>&nbsp;</span>
                         <Form.Check
-                        type="radio"
-                        label={"Front assist ve şehir içi acil fren asistanı"}
-                        name="optionRadios"
-                        id="optionRadios6"
+                            type="radio"
+                            label={"Front assist ve şehir içi acil fren asistanı"}
+                            name="optionRadios"
+                            id="optionRadios6"
                         />
                     </Col>
                 </Form.Group>

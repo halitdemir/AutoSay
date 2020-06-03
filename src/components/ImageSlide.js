@@ -1,5 +1,6 @@
 import React from 'react';
-import { Carousel, Image, Nav } from 'react-bootstrap';
+import { Carousel, Image } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 function ImageSlide(props){
   return(
@@ -24,14 +25,14 @@ function ImageSlide(props){
           }else{
             return( 
               <Carousel.Item>
-                <Nav.Link href="/order_generator">
+                <NavLink to="/order_generator">
                   <Image 
                     className="d-block w-100"
                     src={props.json[key].src}
                     alt={props.json[key].alt}
                     thumbnail
                   />
-                </Nav.Link>
+                </NavLink>
                 <Carousel.Caption>
                   <h3>{props.json[key].firstText}</h3>
                   <p>{props.json[key].secondText}</p>
