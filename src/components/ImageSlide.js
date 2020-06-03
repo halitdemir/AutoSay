@@ -1,7 +1,12 @@
 import React from 'react';
 import { Carousel, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-
+const hStyle = { 
+  color: 'white',   
+  textShadowColor: 'rgba(255, 0, 123, 0.75)',
+  textShadowOffset: {width: 2, height: 3},
+  textShadowRadius: 10
+};
 function ImageSlide(props){
   return(
     <Carousel>
@@ -17,8 +22,8 @@ function ImageSlide(props){
                   thumbnail
                 />
                 <Carousel.Caption>
-                  <h3>{props.json[key].firstText}</h3>
-                  <p>{props.json[key].secondText}</p>
+                  <h3 style={ hStyle }>{props.json[key].firstText}</h3>
+                  <p style={ hStyle }>{props.json[key].secondText}</p>
                 </Carousel.Caption>
               </Carousel.Item>
             );
@@ -34,8 +39,8 @@ function ImageSlide(props){
                   />
                 </NavLink>
                 <Carousel.Caption>
-                  <h3>{props.json[key].firstText}</h3>
-                  <p>{props.json[key].secondText}</p>
+                  <h3 style={ hStyle }>{props.json[key].firstText}</h3>
+                  <p style={ hStyle }>{props.json[key].secondText}</p>
                 </Carousel.Caption>
               </Carousel.Item>
             );

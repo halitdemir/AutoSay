@@ -25,19 +25,19 @@ const Images = {
                 alt: 'First_slide',
                 firstText: 'First Image',
                 secondText: 'Automobiles',
-                src: require('../assets/images/1.svg')
+                src: require('../assets/images/car/car1.jpg')
             },
             img2: {
-                alt: 'Second_slide',
-                firstText: 'Second Image',
+                alt: 'First_slide',
+                firstText: 'First Image',
                 secondText: 'Automobiles',
-                src: require('../assets/images/2.svg')
+                src: require('../assets/images/car/car2.jpg')
             },
             img3: {
-                alt: 'Third_slide',
-                firstText: 'Third Image',
+                alt: 'First_slide',
+                firstText: 'First Image',
                 secondText: 'Automobiles',
-                src: require('../assets/images/3.svg')
+                src: require('../assets/images/car/car3.jpg')
             },
         },
         commercialVehiclesSlide :{
@@ -45,19 +45,19 @@ const Images = {
                 alt: 'First_slide',
                 firstText: 'First Image',
                 secondText: 'Commercial Vegicles',
-                src: require('../assets/images/1.svg')
+                src: require('../assets/images/comCar/ccar1.jpg')
             },
             img2: {
-                alt: 'Second_slide',
-                firstText: 'Second Image',
+                alt: 'First_slide',
+                firstText: 'First Image',
                 secondText: 'Commercial Vegicles',
-                src: require('../assets/images/2.svg')
+                src: require('../assets/images/comCar/ccar2.jpg')
             },
             img3: {
-                alt: 'Third_slide',
-                firstText: 'Third Image',
+                alt: 'First_slide',
+                firstText: 'First Image',
                 secondText: 'Commercial Vegicles',
-                src: require('../assets/images/3.svg')
+                src: require('../assets/images/comCar/ccar3.png')
             },
         },
         electricVehiclesSlide :{
@@ -65,19 +65,19 @@ const Images = {
                 alt: 'First_slide',
                 firstText: 'First Image',
                 secondText: 'Electric Vegicles',
-                src: require('../assets/images/1.svg')
+                src: require('../assets/images/elCar/ecar1.jpg')
             },
             img2: {
-                alt: 'Second_slide',
-                firstText: 'Second Image',
+                alt: 'First_slide',
+                firstText: 'First Image',
                 secondText: 'Electric Vegicles',
-                src: require('../assets/images/2.svg')
+                src: require('../assets/images/elCar/ecar2.jpg')
             },
             img3: {
-                alt: 'Third_slide',
-                firstText: 'Third Image',
+                alt: 'First_slide',
+                firstText: 'First Image',
                 secondText: 'Electric Vegicles',
-                src: require('../assets/images/3.svg')
+                src: require('../assets/images/elCar/ecar3.jpg')
             },
         },
     },

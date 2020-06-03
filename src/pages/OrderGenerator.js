@@ -87,7 +87,6 @@ function GeneratorForm(props){
                             label="1.5         95ps(70 kW)           7 İleri Vites"
                             name="engineRadios"
                             id="engineRadios2"
-                            onChange={console.log("degisti")}
                         />
                         <span>&nbsp;&nbsp;</span>
                         <Form.Check
