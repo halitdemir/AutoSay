@@ -9,7 +9,6 @@ function Home() {
         <h2>Ana Sayfa</h2>
         <ImageSlide json={Images.home.generalSlide} name="generalSlide"/>
         <span>&nbsp;&nbsp;</span>
-        <span>&nbsp;&nbsp;</span>
         <h5>&nbsp;&nbsp;Sistemimizi kullanmak için:</h5>
         <p>
             <ul>
@@ -21,14 +20,12 @@ function Home() {
             En kısa sürede size özel fiyat ve tekliflerle dönüş yapacağız.
         </p>
         <span>&nbsp;&nbsp;</span>
-        <span>&nbsp;&nbsp;</span>
         <ImageSlide json={Images.home.automobileSlide} name="automobileSlide"/>
-        <span>&nbsp;&nbsp;</span>
         <span>&nbsp;&nbsp;</span>
         <ImageSlide json={Images.home.commercialVehiclesSlide} name="commercialVehiclesSlide"/>
         <span>&nbsp;&nbsp;</span>
-        <span>&nbsp;&nbsp;</span>
         <ImageSlide json={Images.home.electricVehiclesSlide} name="electricVehiclesSlide"/>
+        <span>&nbsp;&nbsp;</span>
     </>
     );
 }
