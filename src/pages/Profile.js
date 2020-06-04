@@ -5,7 +5,7 @@ function Profile() {
     return(
         <>
             <span>&nbsp;&nbsp;</span>
-            <h2>Profile</h2>
+            <h2>Profil</h2>
             <Container>
                 <Row>
                     <Col xs={6} md={4}>
@@ -22,12 +22,13 @@ function Profile() {
                     <span>&nbsp;&nbsp;</span>
                     <span>&nbsp;&nbsp;</span>
                     <span>&nbsp;&nbsp;</span>
-                        <h5>İsim  :</h5>
-                        <p>Halit </p>
-                        <h5>Soyisim :</h5>
-                        <p>Demir</p>
-                        <h5>E-Posta :</h5>
-                        <p>h.demir@gmail.com</p>
+                        <h5>Kimlik Bilgileri :</h5>
+                        <p> <b> İsim  : </b> Halit </p>
+                        <p> <b> Soyisim  : </b> Demir </p>
+                    <span>&nbsp;&nbsp;</span>
+                    <span>&nbsp;&nbsp;</span>
+                        <h5>İletişim Bilgileri :</h5>
+                        <p> <b>E-posta  :</b> h.demir@gmail.com</p>
                     </Col>
                 </Row>
             </Container>

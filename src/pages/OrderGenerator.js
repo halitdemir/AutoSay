@@ -8,7 +8,7 @@ class OrderGenerator extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            engine: "",
+            engine: [false, false, false],
             color: "",
             rim: "",
             upholstery: "",
@@ -18,10 +18,6 @@ class OrderGenerator extends Component {
             pedestrianDetection: false,
             frontAsist: false,
         };
-    }
-
-    handleName(event) {
-        this.setState({ name: event.target.value });
     }
 
     render() {
@@ -40,15 +36,189 @@ class OrderGenerator extends Component {
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
                         <Card.Body>
-                            <p><h5>Motor :</h5> 5.5</p>
-                            <p><h5>Renk :</h5> Kırmızı</p>
+                            <p><b>Motor :</b> 1.0         95ps(70 kW)           5 İleri Vites</p>
+                            <p><b>Renk :</b> Kırmızı</p>
+                            <p><b>Jant :</b> EMR-DY459-02 9.0x19" 5x120 ET45 72.6 Silver 19 İnç Jant</p>
+                            <p><b>Döşeme :</b> Siyah-sportif</p>
+                            <p>
+                                <b>Ekler :</b> 
+                                <li>Çarpışma öncesi hazırlık sistemi</li>
+                                <li>Ön sis farları ve entegre statik dönüş farları</li>
+                                <li>Elektrikli katlanabilir yan aynalar</li>
+                                <li>Yaya algılama sistemi</li>
+                                <li>Front assist ve şehir içi acil fren asistanı</li>
+                            </p>
                         </Card.Body>
                         </Accordion.Collapse>
                     </Card>
-                </Accordion>
+                </Accordion>{' '}
                 <span>&nbsp;&nbsp;</span>
                 <span>&nbsp;&nbsp;</span>
-                <GeneratorForm json={Images}/>
+                <Form>
+                    <fieldset>
+                        <Form.Group as={Row}>
+                            <Form.Label as="legend" column sm={2}>
+                                Motor Seçenekleri
+                            </Form.Label>
+                            <Col sm={3}>
+                                <Form.Check
+                                    type="radio"
+                                    label="1.0         95ps(70 kW)           5 İleri Vites"
+                                    name="engineRadios"
+                                    id="engineRadios1"
+                                />
+                                <span>&nbsp;&nbsp;</span>
+                                <Form.Check
+                                    type="radio"
+                                    label="1.5         95ps(70 kW)           7 İleri Vites"
+                                    name="engineRadios"
+                                    id="engineRadios2"
+                                />
+                                <span>&nbsp;&nbsp;</span>
+                                <Form.Check
+                                    type="radio"
+                                    label="1.6         115ps(85 kW)         7 İleri Vites"
+                                    name="engineRadios"
+                                    id="engineRadios3"
+                                />
+                            </Col>
+                        </Form.Group>
+                    </fieldset>
+                    <fieldset>
+                        <Form.Group as={Row}>
+                            <Form.Label as="legend" column sm={2}>
+                                Renk Seçenekleri
+                            </Form.Label>
+                            {Object.keys(Images.color).map(key => 
+                                    (           
+                                        <Col sm={1}>
+                                            <span>&nbsp;&nbsp;</span>
+                                            <Form.Check
+                                            type="radio"
+                                            label={       
+                                                <div className="colorDiv">
+                                                    <Image 
+                                                        className="d-block w-100"
+                                                        src={Images.color[key].src}
+                                                        alt={Images.color[key].alt}
+                                                        fluid
+                                                    />
+                                                </div>           
+                                            }
+                                            name="colorRadios"
+                                            id={`colorRadios${Images.color[key].src}`}
+                                            />
+                                        </Col>
+                                    )
+                                )
+                            }
+                        </Form.Group>
+                    </fieldset>
+                    <fieldset>
+                        <Form.Group as={Row}>
+                            <Form.Label as="legend" column sm={2}>
+                                Jant Seçenekleri
+                            </Form.Label>
+                            {Object.keys(Images.rim).map(key => 
+                                    (           
+                                        <Col sm={1}>
+                                            <span>&nbsp;&nbsp;</span>
+                                            <Form.Check
+                                            type="radio"
+                                            label={       
+                                                <div className="colorDiv">
+                                                    <Image 
+                                                        className="d-block w-100"
+                                                        src={Images.rim[key].src}
+                                                        alt={Images.rim[key].alt}
+                                                        fluid
+                                                    />
+                                                </div>           
+                                            }
+                                            name="rimRadios"
+                                            id={`rimRadios${Images.rim[key].src}`}
+                                            />
+                                        </Col>
+                                    )
+                                )
+                            }
+                        </Form.Group>
+                    </fieldset>
+                    <fieldset>
+                        <Form.Group as={Row}>
+                            <Form.Label as="legend" column sm={2}>
+                                Döşeme Seçenekleri
+                            </Form.Label>
+                            {Object.keys(Images.upholstery).map(key => 
+                                    (           
+                                        <Col sm={1}>
+                                            <span>&nbsp;&nbsp;</span>
+                                            <Form.Check
+                                            type="radio"
+                                            label={       
+                                                <div className="colorDiv">
+                                                    <Image 
+                                                        className="d-block w-100"
+                                                        src={Images.upholstery[key].src}
+                                                        alt={Images.upholstery[key].alt}
+                                                        fluid
+                                                    />
+                                                </div>           
+                                            }
+                                            name="upholsteryRadios"
+                                            id={`upholsteryRadios${Images.upholstery[key].src}`}
+                                            />
+                                        </Col>
+                                    )
+                                )
+                            }
+                        </Form.Group>
+                    </fieldset>
+                    <fieldset>
+                        <Form.Group as={Row}>
+                            <Form.Label as="legend" column sm={2}>
+                                Eklenmek istenen diğer opsiyonlar :
+                            </Form.Label>
+                            <Col sm={5}>
+                                <span>&nbsp;</span>
+                                <Form.Check
+                                    type="checkbox"
+                                    label={"Çarpışma öncesi hazırlık sistemi"}
+                                    name="optionRadios"
+                                    id="optionRadios1"
+                                />
+                                <span>&nbsp;</span>
+                                <Form.Check
+                                    type="checkbox"
+                                    label={"Ön sis farları ve entegre statik dönüş farları"}
+                                    name="optionRadios"
+                                    id="optionRadios2"
+                                />
+                                <span>&nbsp;</span>
+                                <Form.Check
+                                    type="checkbox"
+                                    label={"Elektrikli katlanabilir yan aynalar"}
+                                    name="optionRadios"
+                                    id="optionRadios3"
+                                />
+                                <span>&nbsp;</span>
+                                <Form.Check
+                                    type="checkbox"
+                                    label={"Yaya algılama sistemi"}
+                                    name="optionRadios"
+                                    id="optionRadios4"
+                                />
+                                <span>&nbsp;</span>
+                                <Form.Check
+                                    type="checkbox"
+                                    label={"Front assist ve şehir içi acil fren asistanı"}
+                                    name="optionRadios"
+                                    id="optionRadios5"
+                                />
+                            </Col>
+                        </Form.Group>
+                    </fieldset>
+                </Form>
                 <span>&nbsp;&nbsp;</span>
                 <Container>
                     <Row>
@@ -64,176 +234,6 @@ class OrderGenerator extends Component {
             </div>
         );
     }
-}
-
-function GeneratorForm(props){
-    return(
-        <Form>
-            <fieldset>
-                <Form.Group as={Row}>
-                    <Form.Label as="legend" column sm={2}>
-                        Motor Seçenekleri
-                    </Form.Label>
-                    <Col sm={3}>
-                        <Form.Check
-                            type="radio"
-                            label="1.0         95ps(70 kW)           5 İleri Vites"
-                            name="engineRadios"
-                            id="engineRadios1"
-                        />
-                        <span>&nbsp;&nbsp;</span>
-                        <Form.Check
-                            type="radio"
-                            label="1.5         95ps(70 kW)           7 İleri Vites"
-                            name="engineRadios"
-                            id="engineRadios2"
-                        />
-                        <span>&nbsp;&nbsp;</span>
-                        <Form.Check
-                            type="radio"
-                            label="1.6         115ps(85 kW)         7 İleri Vites"
-                            name="engineRadios"
-                            id="engineRadios3"
-                        />
-                    </Col>
-                </Form.Group>
-            </fieldset>
-            <fieldset>
-                <Form.Group as={Row}>
-                    <Form.Label as="legend" column sm={2}>
-                        Renk Seçenekleri
-                    </Form.Label>
-                    {Object.keys(props.json.color).map(key => 
-                            (           
-                                <Col sm={1}>
-                                    <span>&nbsp;&nbsp;</span>
-                                    <Form.Check
-                                    type="radio"
-                                    label={       
-                                        <div className="colorDiv">
-                                            <Image 
-                                                className="d-block w-100"
-                                                src={props.json.color[key].src}
-                                                alt={props.json.color[key].alt}
-                                                fluid
-                                            />
-                                        </div>           
-                                    }
-                                    name="colorRadios"
-                                    id={`colorRadios${props.json.color[key].src}`}
-                                    />
-                                </Col>
-                            )
-                        )
-                    }
-                </Form.Group>
-            </fieldset>
-            <fieldset>
-                <Form.Group as={Row}>
-                    <Form.Label as="legend" column sm={2}>
-                        Jant Seçenekleri
-                    </Form.Label>
-                    {Object.keys(props.json.rim).map(key => 
-                            (           
-                                <Col sm={1}>
-                                    <span>&nbsp;&nbsp;</span>
-                                    <Form.Check
-                                    type="radio"
-                                    label={       
-                                        <div className="colorDiv">
-                                            <Image 
-                                                className="d-block w-100"
-                                                src={props.json.rim[key].src}
-                                                alt={props.json.rim[key].alt}
-                                                fluid
-                                            />
-                                        </div>           
-                                    }
-                                    name="rimRadios"
-                                    id={`rimRadios${props.json.rim[key].src}`}
-                                    />
-                                </Col>
-                            )
-                        )
-                    }
-                </Form.Group>
-            </fieldset>
-            <fieldset>
-                <Form.Group as={Row}>
-                    <Form.Label as="legend" column sm={2}>
-                        Döşeme Seçenekleri
-                    </Form.Label>
-                    {Object.keys(props.json.upholstery).map(key => 
-                            (           
-                                <Col sm={1}>
-                                    <span>&nbsp;&nbsp;</span>
-                                    <Form.Check
-                                    type="radio"
-                                    label={       
-                                        <div className="colorDiv">
-                                            <Image 
-                                                className="d-block w-100"
-                                                src={props.json.upholstery[key].src}
-                                                alt={props.json.upholstery[key].alt}
-                                                fluid
-                                            />
-                                        </div>           
-                                    }
-                                    name="upholsteryRadios"
-                                    id={`upholsteryRadios${props.json.upholstery[key].src}`}
-                                    />
-                                </Col>
-                            )
-                        )
-                    }
-                </Form.Group>
-            </fieldset>
-            <fieldset>
-                <Form.Group as={Row}>
-                    <Form.Label as="legend" column sm={2}>
-                        Eklenmek istenen diğer opsiyonlar :
-                    </Form.Label>
-                    <Col sm={5}>
-                        <span>&nbsp;</span>
-                        <Form.Check
-                            type="checkbox"
-                            label={"Çarpışma öncesi hazırlık sistemi"}
-                            name="optionRadios"
-                            id="optionRadios1"
-                        />
-                        <span>&nbsp;</span>
-                        <Form.Check
-                            type="checkbox"
-                            label={"Ön sis farları ve entegre statik dönüş farları"}
-                            name="optionRadios"
-                            id="optionRadios2"
-                        />
-                        <span>&nbsp;</span>
-                        <Form.Check
-                            type="checkbox"
-                            label={"Elektrikli katlanabilir yan aynalar"}
-                            name="optionRadios"
-                            id="optionRadios3"
-                        />
-                        <span>&nbsp;</span>
-                        <Form.Check
-                            type="checkbox"
-                            label={"Yaya algılama sistemi"}
-                            name="optionRadios"
-                            id="optionRadios4"
-                        />
-                        <span>&nbsp;</span>
-                        <Form.Check
-                            type="checkbox"
-                            label={"Front assist ve şehir içi acil fren asistanı"}
-                            name="optionRadios"
-                            id="optionRadios5"
-                        />
-                    </Col>
-                </Form.Group>
-            </fieldset>
-        </Form>
-    );
 }
   
 export default OrderGenerator;

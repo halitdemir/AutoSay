@@ -2,11 +2,17 @@ import React from 'react';
 import { Carousel, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 const hStyle = { 
-  color: 'white',   
-  textShadowColor: 'rgba(255, 0, 123, 0.75)',
-  textShadowOffset: {width: 2, height: 3},
-  textShadowRadius: 10
+  color: '#fff',
+  textShadowOffset: { width: 2, height: 2 },
+  textShadowRadius: 1,
+  textShadowColor: '#000',
 };
+
+const bStyle = {
+  flex: 1,
+  backgroundColor: 'rgba(128,127,128, 0.7)',
+  borderRadius: 5 + 'px'
+}
 function ImageSlide(props){
   return(
     <Carousel>
@@ -22,8 +28,10 @@ function ImageSlide(props){
                   thumbnail
                 />
                 <Carousel.Caption>
-                  <h3 style={ hStyle }>{props.json[key].firstText}</h3>
-                  <p style={ hStyle }>{props.json[key].secondText}</p>
+                  <div style={bStyle}>
+                    <h3 style={ hStyle }>{props.json[key].firstText}</h3>
+                    <p style={ hStyle }>{props.json[key].secondText}</p>
+                  </div>
                 </Carousel.Caption>
               </Carousel.Item>
             );
@@ -39,8 +47,10 @@ function ImageSlide(props){
                   />
                 </NavLink>
                 <Carousel.Caption>
-                  <h3 style={ hStyle }>{props.json[key].firstText}</h3>
-                  <p style={ hStyle }>{props.json[key].secondText}</p>
+                  <div style={bStyle}>
+                    <h3 style={ hStyle }>{props.json[key].firstText}</h3>
+                    <p style={ hStyle }>{props.json[key].secondText}</p>
+                  </div>
                 </Carousel.Caption>
               </Carousel.Item>
             );
@@ -50,6 +60,5 @@ function ImageSlide(props){
     </Carousel>
   );
 }
-
 
 export default ImageSlide;

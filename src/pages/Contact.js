@@ -37,13 +37,15 @@ class Contact extends Component {
     }
 
     mailButton(event){
-        window.location.href = `mailto:oofkadho@gmail.com?subject=Sipariş!&body= mesaj:  %0D%0A  ${this.state.textAreaValue}%0D%0A isim/soyisim:  ${this.state.name} ${this.state.lastName}%0D%0A eposta:  ${this.state.email}%0D%0A`;
+        window.location.href = `mailto:oofkadho@gmail.com?subject=Öneri/Sorun/İstek!&body=mesaj:%0D%0A%0D%0A${this.state.textAreaValue}%0D%0A%0D%0Aisim/soyisim:  ${this.state.name} ${this.state.lastName}%0D%0A%0D%0Aeposta:  ${this.state.email}%0D%0A`;
     }
 
     render() {
         return(
             <>
-                <h2>Contact</h2>
+                <span>&nbsp;&nbsp;</span>
+                <h2>İletişim</h2>
+                <span>&nbsp;&nbsp;</span>
                 <Container>
                     <Row>
                         <Col>

@@ -24,7 +24,6 @@ class Order extends Component {
             <>
                 <span>&nbsp;&nbsp;</span>
                 <h2>Sipariş</h2>
-                <p>Bişeler Bişeler</p>
                 <ImageSlide json={Images.order.generalSlide} name="generalSlide"/>
                 <span>&nbsp;&nbsp;</span>
                 <span>&nbsp;&nbsp;</span>
@@ -37,14 +36,18 @@ class Order extends Component {
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
                         <Card.Body>
-                            <p><b>Motor :</b> 5.5</p>
+                            <p><b>Motor :</b> 1.0         95ps(70 kW)           5 İleri Vites</p>
                             <p><b>Renk :</b> Kırmızı</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p><b>Jant :</b> EMR-DY459-02 9.0x19" 5x120 ET45 72.6 Silver 19 İnç Jant</p>
+                            <p><b>Döşeme :</b> Siyah-sportif</p>
+                            <p>
+                                <b>Ekler :</b> 
+                                <li>Çarpışma öncesi hazırlık sistemi</li>
+                                <li>Ön sis farları ve entegre statik dönüş farları</li>
+                                <li>Elektrikli katlanabilir yan aynalar</li>
+                                <li>Yaya algılama sistemi</li>
+                                <li>Front assist ve şehir içi acil fren asistanı</li>
+                            </p>
                         </Card.Body>
                         </Accordion.Collapse>
                     </Card>
@@ -71,7 +74,20 @@ class Order extends Component {
 }
 
 function mailButton(){
-    window.location.href = `mailto:oofkadho@gmail.com?subject=Sipariş!&body=istenen arabanın özellikleri:.`;
+    window.location.href = `mailto:oofkadho@gmail.com?subject=Sipariş!&body=
+    istenen arabanın özellikleri: %0D%0A%0D%0A
+    Motor : 1.0 95ps(70 kW) 5 İleri Vites%0D%0A
+    Renk : Kırmızı%0D%0A
+    Jant : EMR-DY459-02 9.0x19" 5x120 ET45 72.6 Silver 19 İnç Jant%0D%0A
+    Döşeme : Siyah-sportif%0D%0A
+    Ekler :%0D%0A
+    *Çarpışma öncesi hazırlık sistemi%0D%0A
+    *Ön sis farları ve entegre statik dönüş farları%0D%0A
+    *Elektrikli katlanabilir yan aynalar%0D%0A
+    *Yaya algılama sistemi%0D%0A
+    *Front assist ve şehir içi acil fren asistanı%0D%0A%0D%0A
+    Halit Demir%0D%0A
+    h.demir@gmail.com%0D%0A%0D%0A`;
 }
 
 export default Order;

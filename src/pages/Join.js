@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";import { AuthContext } from "../App";
 import * as firebase from 'firebase'
 import { withRouter } from 'react-router-dom';
+import { Button, Form, Col } from 'react-bootstrap';
 
 const Join = ({history}) => {
   const [email, setEmail] = useState("");
@@ -31,26 +32,37 @@ const Join = ({history}) => {
   };
   return (
     <div>
-      <h1>Join</h1>
+      <h1>Kayıt Ol</h1>
       <form onSubmit={e => handleForm(e)}>
-        <input
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          name="email"
-          type="email"
-          placeholder="email"
-        />
-        <input
-          onChange={e => setPassword(e.target.value)}
-          name="password"
-          value={password}
-          type="password"
-          placeholder="password"
-        />
-        <hr />
-        <button type="submit">Register</button>
-        <span>{error}</span>
-      </form>
+          
+          <Form>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Label>E-posta</Form.Label>
+                <Form.Control 
+                  type="email" 
+                  placeholder="E-posta" 
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  />
+              </Form.Group>
+
+              <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Label>Şifre</Form.Label>
+                  <Form.Control 
+                  type="password" 
+                  placeholder="Şifre" 
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                  />
+              </Form.Group>
+            </Form.Row>
+          </Form>
+
+          <hr />
+          <Button type="submit" variant="secondary">Kaydol</Button>
+          <span>{error}</span>
+        </form>
     </div>
   );
 };
